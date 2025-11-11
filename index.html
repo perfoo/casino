@@ -12,11 +12,6 @@
     <header class="header" id="header">
         <nav class="nav">
             <div class="nav-brand">Casino Cezar</div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#hero" class="nav-link" data-hr="Naslovna" data-en="Home">Naslovna</a></li>
                 <li><a href="#games" class="nav-link" data-hr="Casino igre" data-en="Casino Games">Casino igre</a></li>
@@ -30,6 +25,11 @@
                 <button class="lang-btn active" data-lang="hr">HR</button>
                 <button class="lang-btn" data-lang="en">EN</button>
             </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
@@ -71,7 +71,7 @@
 
                         <div class="game-card fade-in">
                             <div class="game-icon">
-                                <i class="fas fa-spade"></i>
+                                <i class="fas fa-layer-group"></i>
                             </div>
                             <h3 class="game-title" data-hr="Blackjack" data-en="Blackjack">Blackjack</h3>
                             <p class="game-description" data-hr="Legenda među casino igrama – nadmudrite dilera i dosegnite savršenih 21." data-en="The legendary casino classic—outsmart the dealer and aim for the perfect 21.">Legenda među casino igrama – nadmudrite dilera i dosegnite savršenih 21.</p>
@@ -223,10 +223,14 @@
                     </div>
 
                     <div class="location-map fade-in">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map"></i>
-                            <p data-hr="Mapa lokacije" data-en="Location Map">Mapa lokacije</p>
-                        </div>
+                        <iframe
+                            class="map-embed"
+                            src="https://www.google.com/maps?q=Casino+Cezar+Ilica+242+Zagreb&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Casino Cezar Location Map"
+                        ></iframe>
                     </div>
                 </div>
             </div>
@@ -296,6 +300,7 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; <span id="currentYear"></span> Casino Cezar. <span data-hr="Sva prava pridržana." data-en="All rights reserved.">Sva prava pridržana.</span></p>
+                <p class="company-info" data-hr="Dioniz M d.o.o., Svilarska 34, Koprivnica" data-en="Dioniz M d.o.o., Svilarska 34, Koprivnica, Croatia">Dioniz M d.o.o., Svilarska 34, Koprivnica</p>
                 <p class="footer-note" data-hr="Ulaz 18+ | Igrajte odgovorno" data-en="Entry 18+ | Play Responsibly">Ulaz 18+ | Igrajte odgovorno</p>
             </div>
         </div>
