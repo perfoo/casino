@@ -1,104 +1,175 @@
-// Utility to handle smooth scrolling for navigation links
-const smoothScrollLinks = document.querySelectorAll('[data-scroll]');
-const navToggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.nav');
+let currentLanguage = 'hr';
 
-smoothScrollLinks.forEach(link => {
-    link.addEventListener('click', event => {
-        const targetId = link.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (target) {
-            event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth' });
-            // Close mobile navigation after selecting an item
-            if (nav.classList.contains('open')) {
-                nav.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    initLanguageSwitcher();
+    initSmoothScrolling();
+    initScrollAnimations();
+    initMobileMenu();
+    initContactForm();
+    updateCurrentYear();
+    initHeaderScroll();
 });
 
-// Toggle navigation on small screens
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', String(isOpen));
+function initLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            switchLanguage(lang);
+
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 }
 
-// Language switching logic
-const languageButtons = document.querySelectorAll('.lang-btn');
-const translatableElements = document.querySelectorAll('[data-lang]');
-const defaultLanguage = 'hr';
+function switchLanguage(lang) {
+    currentLanguage = lang;
 
-function setLanguage(language) {
-    translatableElements.forEach(element => {
-        const elementLang = element.getAttribute('data-lang');
-        if (elementLang === language) {
-            element.classList.add('show');
+    const elements = document.querySelectorAll('[data-hr][data-en]');
+
+    elements.forEach(element => {
+        const hrText = element.getAttribute('data-hr');
+        const enText = element.getAttribute('data-en');
+
+        if (lang === 'hr') {
+            element.textContent = hrText;
         } else {
-            element.classList.remove('show');
+            element.textContent = enText;
         }
     });
 
-    languageButtons.forEach(button => {
-        button.classList.toggle('active', button.dataset.language === language);
-    });
-
-    document.documentElement.lang = language;
+    document.documentElement.lang = lang;
 }
 
-languageButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const selectedLanguage = button.dataset.language;
-        setLanguage(selectedLanguage);
+function initSmoothScrolling() {
+    const navLinks = document.querySelectorAll('.nav-link, .hero-cta');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            if (href.startsWith('#')) {
+                e.preventDefault();
+
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const headerOffset = 80;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    const navMenu = document.getElementById('navMenu');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                }
+            }
+        });
     });
-});
+}
 
-// Initialize language on page load
-setLanguage(defaultLanguage);
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-// Intersection Observer for fade-in animations
-const observersTargets = document.querySelectorAll('[data-observe]');
-const observer = new IntersectionObserver(
-    entries => {
+    const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
-    },
-    {
-        threshold: 0.2
-    }
-);
+    }, observerOptions);
 
-observersTargets.forEach(target => observer.observe(target));
-
-// Footer year handling for bilingual display
-const yearSpanHr = document.getElementById('year');
-const yearSpanEn = document.getElementById('year-en');
-const currentYear = new Date().getFullYear();
-
-if (yearSpanHr) {
-    yearSpanHr.textContent = currentYear;
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
 }
 
-if (yearSpanEn) {
-    yearSpanEn.textContent = currentYear;
-}
+function initMobileMenu() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
 
-// Basic form handler placeholder to prevent submission when honeypot is filled
-const contactForm = document.querySelector('.contact-form');
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', event => {
-        const honeypot = contactForm.querySelector('#company');
-        if (honeypot && honeypot.value.trim() !== '') {
-            event.preventDefault();
-            return false;
+        const spans = this.querySelectorAll('span');
+        if (navMenu.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
         }
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+}
+
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const honeypot = form.querySelector('input[name="website"]');
+        if (honeypot.value !== '') {
+            return;
+        }
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const successMessage = currentLanguage === 'hr'
+            ? 'Hvala vam! Vaša poruka je uspješno poslana. Odgovorit ćemo vam u najkraćem mogućem roku.'
+            : 'Thank you! Your message has been sent successfully. We will respond to you as soon as possible.';
+
+        alert(successMessage);
+
+        form.reset();
+    });
+}
+
+function updateCurrentYear() {
+    const yearSpan = document.getElementById('currentYear');
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+}
+
+function initHeaderScroll() {
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+            header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
+        } else {
+            header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+        }
+
+        lastScroll = currentScroll;
     });
 }

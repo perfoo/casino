@@ -2,299 +2,288 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino Cezar | Luksuzno igranje u Zagrebu</title>
-    <meta name="description" content="Casino Cezar Zagreb nudi luksuzne igre, ekskluzivne događaje i odgovorno igranje u srcu grada.">
+    <meta name="description" content="Casino Cezar - Experience luxury gaming in the heart of Zagreb. Roulette, Poker, Blackjack, and premium entertainment.">
+    <title>Casino Cezar - Luksuzni kazino u Zagrebu</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="top-bar">
-        <nav class="nav" aria-label="Main navigation">
-            <div class="logo" data-lang="hr">Casino Cezar</div>
-            <div class="logo" data-lang="en">Casino Cezar</div>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-            <ul class="nav-links">
-                <li><a href="#hero" data-scroll>
-                    <span data-lang="hr">Naslovna</span>
-                    <span data-lang="en">Home</span>
-                </a></li>
-                <li><a href="#games" data-scroll>
-                    <span data-lang="hr">Igre</span>
-                    <span data-lang="en">Games</span>
-                </a></li>
-                <li><a href="#prize" data-scroll>
-                    <span data-lang="hr">Nagradna igra</span>
-                    <span data-lang="en">Prize Game</span>
-                </a></li>
-                <li><a href="#events" data-scroll>
-                    <span data-lang="hr">Događanja</span>
-                    <span data-lang="en">Events</span>
-                </a></li>
-                <li><a href="#rules" data-scroll>
-                    <span data-lang="hr">Pravila</span>
-                    <span data-lang="en">Rules</span>
-                </a></li>
-                <li><a href="#location" data-scroll>
-                    <span data-lang="hr">Lokacija</span>
-                    <span data-lang="en">Location</span>
-                </a></li>
-                <li><a href="#contact" data-scroll>
-                    <span data-lang="hr">Kontakt</span>
-                    <span data-lang="en">Contact</span>
-                </a></li>
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-brand">Casino Cezar</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link" data-hr="Naslovna" data-en="Home">Naslovna</a></li>
+                <li><a href="#games" class="nav-link" data-hr="Igre" data-en="Games">Igre</a></li>
+                <li><a href="#prize" class="nav-link" data-hr="Nagradna igra" data-en="Prize Game">Nagradna igra</a></li>
+                <li><a href="#events" class="nav-link" data-hr="Događanja" data-en="Events">Događanja</a></li>
+                <li><a href="#rules" class="nav-link" data-hr="Pravila" data-en="Rules">Pravila</a></li>
+                <li><a href="#location" class="nav-link" data-hr="Lokacija" data-en="Location">Lokacija</a></li>
+                <li><a href="#contact" class="nav-link" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
             </ul>
-            <div class="language-switcher" role="group" aria-label="Language switcher">
-                <button type="button" class="lang-btn active" data-language="hr">HR</button>
-                <button type="button" class="lang-btn" data-language="en">EN</button>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="hr">HR</button>
+                <button class="lang-btn" data-lang="en">EN</button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="hero" class="section hero">
-            <div class="hero-content" data-observe>
-                <h1>
-                    <span data-lang="hr">Casino Cezar</span>
-                    <span data-lang="en">Casino Cezar</span>
-                </h1>
-                <p class="intro" data-lang="hr">Dobrodošli u oazu luksuza i igre u srcu Zagreba.</p>
-                <p class="intro" data-lang="en">Welcome to the oasis of luxury gaming in the heart of Zagreb.</p>
-                <p class="slogan" data-lang="hr">Doživite luksuz igre.</p>
-                <p class="slogan" data-lang="en">Experience the luxury of play.</p>
-                <a href="#games" class="btn" data-scroll>
-                    <span data-lang="hr">Istražite igre</span>
-                    <span data-lang="en">Explore games</span>
-                </a>
+        <section class="hero" id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Casino Cezar</h1>
+                <p class="hero-slogan" data-hr="Doživite luksuz igre." data-en="Experience the luxury of gaming.">Doživite luksuz igre.</p>
+                <p class="hero-text" data-hr="Dobrodošli u najekskluzivniji kazino u srcu Zagreba. Uživajte u vrhunskoj zabavi, elegantnoj atmosferi i nezaboravnim trenucima." data-en="Welcome to the most exclusive casino in the heart of Zagreb. Enjoy premium entertainment, elegant atmosphere, and unforgettable moments.">Dobrodošli u najekskluzivniji kazino u srcu Zagreba. Uživajte u vrhunskoj zabavi, elegantnoj atmosferi i nezaboravnim trenucima.</p>
+                <a href="#games" class="hero-cta" data-hr="Istražite naše igre" data-en="Explore Our Games">Istražite naše igre</a>
             </div>
         </section>
 
-        <section id="games" class="section" data-observe>
-            <div class="section-header">
-                <h2>
-                    <span data-lang="hr">Igre</span>
-                    <span data-lang="en">Games</span>
-                </h2>
-                <p data-lang="hr">Od klasičnih stolnih igara do modernih automata.</p>
-                <p data-lang="en">From classic tables to modern machines.</p>
-            </div>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Roulette</h3>
-                    <p data-lang="hr">Uz elegantne stolove i stručno osoblje, rulet nudi uzbuđenje svakog okretaja.</p>
-                    <p data-lang="en">Elegant tables and expert croupiers make every spin unforgettable.</p>
-                </article>
-                <article class="card">
-                    <h3>Poker</h3>
-                    <p data-lang="hr">Ekskluzivni turniri i cash igre za igrače svih razina iskustva.</p>
-                    <p data-lang="en">Exclusive tournaments and cash games for every skill level.</p>
-                </article>
-                <article class="card">
-                    <h3>Blackjack</h3>
-                    <p data-lang="hr">Klasična igra u suvremenom okruženju s visokim ulogom elegancije.</p>
-                    <p data-lang="en">The classic game set in a contemporary atmosphere of refined stakes.</p>
-                </article>
-                <article class="card">
-                    <h3>Slot Machines</h3>
-                    <p data-lang="hr">Najnoviji video automati s progresivnim jackpotovima i tematskim avanturama.</p>
-                    <p data-lang="en">Latest video slots with progressive jackpots and immersive themes.</p>
-                </article>
-                <article class="card">
-                    <h3>Table Games</h3>
-                    <p data-lang="hr">Raznolik izbor stolnih igara za ljubitelje strategije i uzbuđenja.</p>
-                    <p data-lang="en">A diverse selection of table games for strategy lovers and thrill seekers.</p>
-                </article>
-            </div>
-        </section>
+        <section class="games" id="games">
+            <div class="container">
+                <h2 class="section-title fade-in" data-hr="Naše igre" data-en="Our Games">Naše igre</h2>
+                <p class="section-subtitle fade-in" data-hr="Izaberite svoju avanturu" data-en="Choose your adventure">Izaberite svoju avanturu</p>
 
-        <section id="prize" class="section alt" data-observe>
-            <div class="section-header">
-                <h2>
-                    <span data-lang="hr">Nagradna igra</span>
-                    <span data-lang="en">Prize Game</span>
-                </h2>
-                <p data-lang="hr">Svaki mjesec priređujemo ekskluzivne nagradne igre za naše članove.</p>
-                <p data-lang="en">Every month we host exclusive prize draws for our members.</p>
-            </div>
-            <div class="highlight-box">
-                <h3>
-                    <span data-lang="hr">Kako sudjelovati</span>
-                    <span data-lang="en">How to participate</span>
-                </h3>
-                <ul>
-                    <li>
-                        <span data-lang="hr">Postanite član Casino Cezara.</span>
-                        <span data-lang="en">Become a member of Casino Cezar.</span>
-                    </li>
-                    <li>
-                        <span data-lang="hr">Igrajte omiljene igre tijekom promotivnog razdoblja.</span>
-                        <span data-lang="en">Play your favorite games during the promotional period.</span>
-                    </li>
-                    <li>
-                        <span data-lang="hr">Prijavite se na info pultu za sudjelovanje.</span>
-                        <span data-lang="en">Register at the information desk to join.</span>
-                    </li>
-                </ul>
-                <div class="rules-link">
-                    <span data-lang="hr">Detaljna pravila uskoro dostupna.</span>
-                    <span data-lang="en">Detailed rules coming soon.</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="events" class="section" data-observe>
-            <div class="section-header">
-                <h2>
-                    <span data-lang="hr">Događanja</span>
-                    <span data-lang="en">Events</span>
-                </h2>
-                <p data-lang="hr">Otkrijte nadolazeće turnire i posebne večeri.</p>
-                <p data-lang="en">Discover upcoming tournaments and special evenings.</p>
-            </div>
-            <div class="event-list">
-                <article class="event-card">
-                    <h3>
-                        <span data-lang="hr">Poker Royal Night</span>
-                        <span data-lang="en">Poker Royal Night</span>
-                    </h3>
-                    <p data-lang="hr">Ekskluzivni turnir s ograničenim brojem sudionika.</p>
-                    <p data-lang="en">An exclusive tournament with limited seats.</p>
-                    <time datetime="2024-11-15">15.11.2024.</time>
-                </article>
-                <article class="event-card">
-                    <h3>
-                        <span data-lang="hr">Roulette Glamour Weekend</span>
-                        <span data-lang="en">Roulette Glamour Weekend</span>
-                    </h3>
-                    <p data-lang="hr">Dvije noći posebnih nagrada i živog zabavnog programa.</p>
-                    <p data-lang="en">Two nights of special prizes and live entertainment.</p>
-                    <time datetime="2024-12-05">05.12.2024.</time>
-                </article>
-                <article class="event-card">
-                    <h3>
-                        <span data-lang="hr">Blackjack Masters</span>
-                        <span data-lang="en">Blackjack Masters</span>
-                    </h3>
-                    <p data-lang="hr">Testirajte svoje vještine protiv najboljih igrača.</p>
-                    <p data-lang="en">Test your skills against the best players.</p>
-                    <time datetime="2025-01-20">20.01.2025.</time>
-                </article>
-            </div>
-        </section>
-
-        <section id="rules" class="section alt" data-observe>
-            <div class="section-header">
-                <h2>
-                    <span data-lang="hr">Pravila i odgovorno igranje</span>
-                    <span data-lang="en">Rules & Responsible Gaming</span>
-                </h2>
-            </div>
-            <div class="notice-box">
-                <p class="age">
-                    <span data-lang="hr">Ulaz je dopušten osobama starijima od 18 godina.</span>
-                    <span data-lang="en">Entry is permitted to guests 18 years and older.</span>
-                </p>
-                <p>
-                    <span data-lang="hr">Igrajte odgovorno. Potražite pomoć ako osjećate da gubite kontrolu.</span>
-                    <span data-lang="en">Play responsibly. Seek help if you feel your play is no longer under control.</span>
-                </p>
-            </div>
-        </section>
-
-        <section id="location" class="section" data-observe>
-            <div class="section-header">
-                <h2>
-                    <span data-lang="hr">Lokacija i radno vrijeme</span>
-                    <span data-lang="en">Location & Opening Hours</span>
-                </h2>
-            </div>
-            <div class="location-grid">
-                <div>
-                    <p>
-                        <strong data-lang="hr">Adresa:</strong>
-                        <strong data-lang="en">Address:</strong>
-                        <span data-lang="hr"> Trg Bana Jelačića 5, Zagreb</span>
-                        <span data-lang="en"> Ban Jelačić Square 5, Zagreb</span>
-                    </p>
-                    <p>
-                        <span data-lang="hr"><strong>Radno vrijeme:</strong> Svaki dan 12:00 – 05:00</span>
-                        <span data-lang="en"><strong>Opening hours:</strong> Daily 12:00 – 05:00</span>
-                    </p>
-                    <p>
-                        <span data-lang="hr">Osigurano podzemno parkiralište za goste.</span>
-                        <span data-lang="en">Underground parking available for guests.</span>
-                    </p>
-                </div>
-                <div class="map-placeholder" aria-label="Map placeholder">
-                    <span data-lang="hr">Mapa uskoro dostupna.</span>
-                    <span data-lang="en">Map coming soon.</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section alt" data-observe>
-            <div class="section-header">
-                <h2>
-                    <span data-lang="hr">Kontakt</span>
-                    <span data-lang="en">Contact</span>
-                </h2>
-            </div>
-            <div class="contact-grid">
-                <form class="contact-form" novalidate>
-                    <label for="name">
-                        <span data-lang="hr">Ime i prezime</span>
-                        <span data-lang="en">Full name</span>
-                    </label>
-                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ana Horvat">
-
-                    <label for="email">
-                        <span data-lang="hr">Email</span>
-                        <span data-lang="en">Email</span>
-                    </label>
-                    <input type="email" id="email" name="email" required autocomplete="email" placeholder="ana@example.com">
-
-                    <label for="message">
-                        <span data-lang="hr">Poruka</span>
-                        <span data-lang="en">Message</span>
-                    </label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Želim rezervirati stol..."></textarea>
-
-                    <div class="honeypot">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company" autocomplete="off" tabindex="-1">
+                <div class="games-grid">
+                    <div class="game-card fade-in">
+                        <div class="game-icon">
+                            <i class="fas fa-circle-notch"></i>
+                        </div>
+                        <h3 class="game-title" data-hr="Rulet" data-en="Roulette">Rulet</h3>
+                        <p class="game-description" data-hr="Klasična igra šanse s elegancijom i uzbuđenjem. Stavite svoj ulog i pustite kolo sreće da odluči." data-en="Classic game of chance with elegance and excitement. Place your bet and let the wheel of fortune decide.">Klasična igra šanse s elegancijom i uzbuđenjem. Stavite svoj ulog i pustite kolo sreće da odluči.</p>
                     </div>
 
-                    <button type="submit" class="btn submit">
-                        <span data-lang="hr">Pošalji upit</span>
-                        <span data-lang="en">Send message</span>
-                    </button>
-                </form>
-                <div class="contact-details">
-                    <p>
-                        <strong data-lang="hr">Telefon:</strong>
-                        <strong data-lang="en">Phone:</strong>
-                        <span>+385 1 123 4567</span>
-                    </p>
-                    <p>
-                        <strong>Email:</strong>
-                        <span>info@casinocezar.hr</span>
-                    </p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">Facebook</a>
-                        <a href="#" aria-label="Instagram">Instagram</a>
+                    <div class="game-card fade-in">
+                        <div class="game-icon">
+                            <i class="fas fa-diamond"></i>
+                        </div>
+                        <h3 class="game-title" data-hr="Poker" data-en="Poker">Poker</h3>
+                        <p class="game-description" data-hr="Igra vještine, strategije i psihologije. Testirajte svoje sposobnosti protiv najboljih igrača." data-en="A game of skill, strategy, and psychology. Test your abilities against the best players.">Igra vještine, strategije i psihologije. Testirajte svoje sposobnosti protiv najboljih igrača.</p>
                     </div>
+
+                    <div class="game-card fade-in">
+                        <div class="game-icon">
+                            <i class="fas fa-spade"></i>
+                        </div>
+                        <h3 class="game-title" data-hr="Blackjack" data-en="Blackjack">Blackjack</h3>
+                        <p class="game-description" data-hr="Najpoznatija casino igra na svijetu. Pobijedite dilera i osvojite 21." data-en="The world's most popular casino game. Beat the dealer and hit 21.">Najpoznatija casino igra na svijetu. Pobijedite dilera i osvojite 21.</p>
+                    </div>
+
+                    <div class="game-card fade-in">
+                        <div class="game-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3 class="game-title" data-hr="Slot aparati" data-en="Slot Machines">Slot aparati</h3>
+                        <p class="game-description" data-hr="Moderna tehnologija i vrhunska zabava. Okušajte sreću na najnovijim automatima." data-en="Modern technology and premium entertainment. Try your luck on the latest machines.">Moderna tehnologija i vrhunska zabava. Okušajte sreću na najnovijim automatima.</p>
+                    </div>
+
+                    <div class="game-card fade-in">
+                        <div class="game-icon">
+                            <i class="fas fa-chess-board"></i>
+                        </div>
+                        <h3 class="game-title" data-hr="Stolne igre" data-en="Table Games">Stolne igre</h3>
+                        <p class="game-description" data-hr="Raznovrsna ponuda tradicionalnih i modernih stolnih igara u luksuznom ambijentu." data-en="Diverse selection of traditional and modern table games in a luxurious setting.">Raznovrsna ponuda tradicionalnih i modernih stolnih igara u luksuznom ambijentu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prize" id="prize">
+            <div class="container">
+                <h2 class="section-title fade-in" data-hr="Nagradna igra" data-en="Prize Game">Nagradna igra</h2>
+                <p class="section-subtitle fade-in" data-hr="Mjesečne nagrade za naše vjerne goste" data-en="Monthly prizes for our loyal guests">Mjesečne nagrade za naše vjerne goste</p>
+
+                <div class="prize-box fade-in">
+                    <div class="prize-content">
+                        <h3 data-hr="Kako sudjelovati?" data-en="How to participate?">Kako sudjelovati?</h3>
+                        <ul class="prize-list">
+                            <li data-hr="Posjetite naš kazino i registrirajte se za člansku karticu" data-en="Visit our casino and register for a membership card">Posjetite naš kazino i registrirajte se za člansku karticu</li>
+                            <li data-hr="Svaki ulog automatski donosi bodove za nagradnu igru" data-en="Every bet automatically earns points for the prize game">Svaki ulog automatski donosi bodove za nagradnu igru</li>
+                            <li data-hr="Što više igrate, veće su vaše šanse za osvajanje nagrada" data-en="The more you play, the greater your chances of winning prizes">Što više igrate, veće su vaše šanse za osvajanje nagrada</li>
+                            <li data-hr="Izvlačenje pobjednika odvija se posljednjeg dana u mjesecu" data-en="Winners are drawn on the last day of the month">Izvlačenje pobjednika odvija se posljednjeg dana u mjesecu</li>
+                        </ul>
+                        <p class="prize-note" data-hr="Za detaljne uvjete nagradne igre, posjetite nas ili kontaktirajte naše osoblje." data-en="For detailed prize game terms, visit us or contact our staff.">Za detaljne uvjete nagradne igre, posjetite nas ili kontaktirajte naše osoblje.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events" id="events">
+            <div class="container">
+                <h2 class="section-title fade-in" data-hr="Događanja" data-en="Events">Događanja</h2>
+                <p class="section-subtitle fade-in" data-hr="Nadolazeći turniri i posebne večeri" data-en="Upcoming tournaments and special nights">Nadolazeći turniri i posebne večeri</p>
+
+                <div class="events-grid">
+                    <div class="event-card fade-in">
+                        <div class="event-date">
+                            <span class="event-day">15</span>
+                            <span class="event-month" data-hr="SIJ" data-en="JAN">SIJ</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title" data-hr="Noćni poker turnir" data-en="Night Poker Tournament">Noćni poker turnir</h3>
+                            <p class="event-description" data-hr="Pridružite se ekskluzivnom poker turniru s nagradnim fondom i posebnim pogodnostima." data-en="Join the exclusive poker tournament with prize pool and special benefits.">Pridružite se ekskluzivnom poker turniru s nagradnim fondom i posebnim pogodnostima.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card fade-in">
+                        <div class="event-date">
+                            <span class="event-day">22</span>
+                            <span class="event-month" data-hr="SIJ" data-en="JAN">SIJ</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title" data-hr="VIP večer" data-en="VIP Evening">VIP večer</h3>
+                            <p class="event-description" data-hr="Ekskluzivna večer za naše VIP članove s posebnim bonusima i kokteilima." data-en="Exclusive evening for our VIP members with special bonuses and cocktails.">Ekskluzivna večer za naše VIP članove s posebnim bonusima i kokteilima.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card fade-in">
+                        <div class="event-date">
+                            <span class="event-day">31</span>
+                            <span class="event-month" data-hr="SIJ" data-en="JAN">SIJ</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title" data-hr="Veliko mjesečno izvlačenje" data-en="Grand Monthly Draw">Veliko mjesečno izvlačenje</h3>
+                            <p class="event-description" data-hr="Ne propustite izvlačenje nagrada za sve koji su sudjelovali u nagradnoj igri ovog mjeseca." data-en="Don't miss the prize draw for all who participated in this month's prize game.">Ne propustite izvlačenje nagrada za sve koji su sudjelovali u nagradnoj igri ovog mjeseca.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rules" id="rules">
+            <div class="container">
+                <h2 class="section-title fade-in" data-hr="Pravila i odgovorno igranje" data-en="Rules & Responsible Gaming">Pravila i odgovorno igranje</h2>
+
+                <div class="rules-box fade-in">
+                    <div class="rules-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="rules-content">
+                        <h3 class="rules-heading" data-hr="Ulaz samo za punoljetne osobe (18+)" data-en="Entry only for adults (18+)">Ulaz samo za punoljetne osobe (18+)</h3>
+                        <p data-hr="Casino Cezar je posvećen odgovornom igranju. Ulaz u kazino i sudjelovanje u igrama dozvoljeno je isključivo osobama starijim od 18 godina. Pri ulasku je potrebno pokazati valjani identifikacijski dokument." data-en="Casino Cezar is committed to responsible gaming. Entry to the casino and participation in games is permitted exclusively to persons over 18 years of age. A valid identification document must be shown upon entry.">Casino Cezar je posvećen odgovornom igranju. Ulaz u kazino i sudjelovanje u igrama dozvoljeno je isključivo osobama starijim od 18 godina. Pri ulasku je potrebno pokazati valjani identifikacijski dokument.</p>
+
+                        <h3 class="rules-heading" data-hr="Igrajte odgovorno" data-en="Play Responsibly">Igrajte odgovorno</h3>
+                        <p data-hr="Igranje treba biti zabava, a ne način zarađivanja. Postavite granice koliko ste spremni potrošiti i pridržavajte ih se. Ako smatrate da imate problem s kockanjem, potražite stručnu pomoć." data-en="Gaming should be entertainment, not a way to earn money. Set limits on how much you're willing to spend and stick to them. If you think you have a gambling problem, seek professional help.">Igranje treba biti zabava, a ne način zarađivanja. Postavite granice koliko ste spremni potrošiti i pridržavajte ih se. Ako smatrate da imate problem s kockanjem, potražite stručnu pomoć.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location" id="location">
+            <div class="container">
+                <h2 class="section-title fade-in" data-hr="Lokacija i radno vrijeme" data-en="Location & Opening Hours">Lokacija i radno vrijeme</h2>
+
+                <div class="location-grid">
+                    <div class="location-info fade-in">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3 data-hr="Adresa" data-en="Address">Adresa</h3>
+                                <p>Ilica 242<br>10000 Zagreb, Hrvatska</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3 data-hr="Radno vrijeme" data-en="Opening Hours">Radno vrijeme</h3>
+                                <p data-hr="Svaki dan: 12:00 - 05:00" data-en="Every day: 12:00 PM - 05:00 AM">Svaki dan: 12:00 - 05:00</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <h3 data-hr="Parking" data-en="Parking">Parking</h3>
+                                <p data-hr="Besplatni parking dostupan za naše goste u blizini objekta." data-en="Free parking available for our guests near the venue.">Besplatni parking dostupan za naše goste u blizini objekta.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-map fade-in">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p data-hr="Mapa lokacije" data-en="Location Map">Mapa lokacije</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title fade-in" data-hr="Kontaktirajte nas" data-en="Contact Us">Kontaktirajte nas</h2>
+                <p class="section-subtitle fade-in" data-hr="Imate pitanja? Javite nam se!" data-en="Have questions? Get in touch!">Imate pitanja? Javite nam se!</p>
+
+                <div class="contact-grid">
+                    <div class="contact-info fade-in">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3 data-hr="Telefon" data-en="Phone">Telefon</h3>
+                                <p>+385 1 234 5678</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3 data-hr="Email" data-en="Email">Email</h3>
+                                <p>info@casinocezar.hr</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-share-alt"></i>
+                            <div>
+                                <h3 data-hr="Društvene mreže" data-en="Social Media">Društvene mreže</h3>
+                                <div class="social-links">
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form fade-in" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-hr="Ime i prezime" data-en="Full Name">Ime i prezime</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-hr="Email adresa" data-en="Email Address">Email adresa</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-hr="Poruka" data-en="Message">Poruka</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+                        <button type="submit" class="submit-btn" data-hr="Pošalji poruku" data-en="Send Message">Pošalji poruku</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>
-            <span data-lang="hr">© <span id="year"></span> Casino Cezar. Igrajte odgovorno. 18+.</span>
-            <span data-lang="en">© <span id="year-en"></span> Casino Cezar. Play responsibly. 18+.</span>
-        </p>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> Casino Cezar. <span data-hr="Sva prava pridržana." data-en="All rights reserved.">Sva prava pridržana.</span></p>
+                <p class="footer-note" data-hr="Ulaz 18+ | Igrajte odgovorno" data-en="Entry 18+ | Play Responsibly">Ulaz 18+ | Igrajte odgovorno</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
