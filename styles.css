@@ -71,12 +71,15 @@ body {
 }
 
 .nav-brand {
-    font-family: var(--font-primary);
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--color-gold);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo {
+    display: block;
+    height: 52px;
+    width: auto;
 }
 
 .nav-menu {
