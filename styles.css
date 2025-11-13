@@ -285,6 +285,20 @@ section {
     overflow: hidden;
 }
 
+.table-games-hero .section-title {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.15;
+}
+
+.table-games-hero .section-subtitle {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.35;
+}
+
+.table-games-hero .games-category {
+    margin-top: var(--spacing-md);
+}
+
 .table-games-hero::before,
 .table-games-hero::after {
     content: '';
@@ -344,8 +358,37 @@ section {
     }
 }
 
+.slot-games-hero {
+    position: relative;
+    padding: calc(var(--spacing-xl) * 0.75) 0;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.82) 55%, rgba(10, 10, 10, 0.9) 100%);
+    overflow: hidden;
+}
+
+.slot-games-hero::before,
+.slot-games-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.slot-games-hero::after {
+    background: linear-gradient(120deg, rgba(10, 10, 10, 0.82) 0%, rgba(10, 10, 10, 0.6) 55%, rgba(10, 10, 10, 0.82) 100%), url('img/slot.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.slot-games-hero::before {
+    background: radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.2), transparent 60%);
+    mix-blend-mode: screen;
+}
+
 .slot-games {
-    padding: var(--spacing-xl) 0;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    max-width: 1020px;
 }
 
 .slot-games-grid .game-card {
