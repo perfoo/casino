@@ -659,7 +659,7 @@ section {
     border-radius: 10px;
 }
 
-.contact-item i {
+.contact-item > i {
     font-size: 1.8rem;
     color: var(--color-gold);
     margin-top: 0.3rem;
@@ -692,6 +692,10 @@ section {
     border-radius: 50%;
     font-size: 1.2rem;
     transition: all var(--transition-fast);
+}
+
+.social-links a i {
+    color: var(--color-bg-darker);
 }
 
 .social-links a:hover {
