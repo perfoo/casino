@@ -45,6 +45,8 @@ function switchLanguage(lang) {
 
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-link, .hero-cta');
+    const navMenu = document.getElementById('navMenu');
+    const navToggle = document.getElementById('navToggle');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -66,9 +68,17 @@ function initSmoothScrolling() {
                         behavior: 'smooth'
                     });
 
-                    const navMenu = document.getElementById('navMenu');
-                    if (navMenu.classList.contains('active')) {
+                    if (navMenu && navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
+                        navMenu.setAttribute('aria-hidden', 'true');
+                        if (navToggle) {
+                            navToggle.setAttribute('aria-expanded', 'false');
+                            const spans = navToggle.querySelectorAll('span');
+                            spans.forEach(span => {
+                                span.style.transform = 'none';
+                                span.style.opacity = '1';
+                            });
+                        }
                     }
                 }
             }
@@ -100,28 +110,47 @@ function initMobileMenu() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
+    if (!navToggle || !navMenu) {
+        return;
+    }
 
-        const spans = this.querySelectorAll('span');
-        if (navMenu.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('aria-hidden', 'true');
+
+    const spans = navToggle.querySelectorAll('span');
+
+    const setMenuState = (isOpen) => {
+        navMenu.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navMenu.setAttribute('aria-hidden', String(!isOpen));
+
+        if (spans.length === 3) {
+            if (isOpen) {
+                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
         }
+    };
+
+    navToggle.addEventListener('click', function() {
+        const isOpen = !navMenu.classList.contains('active');
+        setMenuState(isOpen);
     });
 
     document.addEventListener('click', function(e) {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('active');
-            const spans = navToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            setMenuState(false);
+        }
+    });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 1024) {
+            setMenuState(false);
         }
     });
 }
