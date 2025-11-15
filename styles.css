@@ -860,8 +860,17 @@ section {
 }
 
 @media (max-width: 768px) {
+    body {
+        line-height: 1.7;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
     .nav {
         gap: var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .nav-brand {
@@ -902,12 +911,95 @@ section {
         display: flex;
     }
 
+    .hero {
+        min-height: 85vh;
+        padding-top: calc(var(--spacing-xl) * 0.6);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .hero-content {
+        padding: var(--spacing-sm);
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: clamp(2.2rem, 8vw, 3rem);
+        letter-spacing: 3px;
+    }
+
+    .hero-slogan {
+        font-size: clamp(0.9rem, 4vw, 1.3rem);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: var(--spacing-md);
+    }
+
+    section {
+        padding: calc(var(--spacing-lg) * 0.9) 0;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+        letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .games-category {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
     }
 
     .games-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .game-card {
+        padding: var(--spacing-sm);
+    }
+
+    .game-icon {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .game-title {
+        font-size: 1.3rem;
+        margin-bottom: var(--spacing-xs);
+        line-height: 1.3;
+    }
+
+    .game-description {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .prize-box {
+        padding: var(--spacing-md);
+    }
+
+    .prize-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .prize-list li {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+    }
+
+    .events-grid {
+        gap: var(--spacing-sm);
     }
 
     .events-grid {
@@ -941,8 +1033,29 @@ section {
         font-size: 1.4rem;
     }
 
+    .hero {
+        min-height: unset;
+        padding-top: calc(var(--spacing-lg) * 0.9);
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+    }
+
+    .hero-slogan {
+        font-size: clamp(0.85rem, 4.2vw, 1.1rem);
+    }
+
     .section-title {
-        font-size: 2rem;
+        font-size: clamp(1.6rem, 8vw, 2rem);
+    }
+
+    .games-grid {
+        gap: var(--spacing-xs);
+    }
+
+    .game-card {
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .hero-cta {
