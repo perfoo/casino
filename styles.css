@@ -860,6 +860,14 @@ section {
 }
 
 @media (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
     .nav {
         gap: var(--spacing-sm);
     }
@@ -902,8 +910,44 @@ section {
         display: flex;
     }
 
+    .hero {
+        height: auto;
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.4rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-slogan {
+        font-size: 1.05rem;
+        letter-spacing: 1px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-cta {
+        padding: 0.85rem 2.4rem;
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: var(--spacing-md);
     }
 
     .games-grid {
@@ -912,6 +956,36 @@ section {
 
     .events-grid {
         grid-template-columns: 1fr;
+    }
+
+    .game-card {
+        padding: var(--spacing-sm);
+    }
+
+    .game-icon {
+        font-size: 3rem;
+    }
+
+    .game-title {
+        font-size: 1.5rem;
+    }
+
+    .event-card {
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+
+    .event-date {
+        padding: var(--spacing-xs);
+        min-width: 70px;
+    }
+
+    .event-day {
+        font-size: 2rem;
+    }
+
+    .event-title {
+        font-size: 1.25rem;
     }
 
     .event-card {
@@ -941,12 +1015,24 @@ section {
         font-size: 1.4rem;
     }
 
-    .section-title {
+    .hero-title {
         font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
     }
 
     .hero-cta {
         padding: 0.8rem 2rem;
         font-size: 0.95rem;
+    }
+
+    .game-title {
+        font-size: 1.35rem;
+    }
+
+    .event-day {
+        font-size: 1.7rem;
     }
 }
