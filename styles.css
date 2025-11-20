@@ -1037,6 +1037,14 @@ section {
     }
 }
 
+@media (max-width: 520px) {
+    .rules .section-title {
+        font-size: 1.3rem;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+}
+
 @media (max-width: 480px) {
     .nav-brand {
         font-size: 1.4rem;
@@ -1051,9 +1059,9 @@ section {
     }
 
     .rules .section-title {
-        font-size: 1.15rem;
-        letter-spacing: 0.25px;
-        text-transform: none;
+        font-size: 1.05rem;
+        letter-spacing: 0.15px;
+        text-transform: uppercase;
         line-height: 1.05;
     }
 
