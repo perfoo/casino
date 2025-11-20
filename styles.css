@@ -264,6 +264,12 @@ section {
     letter-spacing: 3px;
 }
 
+.prize .section-title,
+.location .section-title,
+.contact .section-title {
+    white-space: nowrap;
+}
+
 .section-subtitle {
     font-size: 1.2rem;
     color: var(--color-text-muted);
@@ -952,6 +958,13 @@ section {
         letter-spacing: 2px;
     }
 
+    .prize .section-title,
+    .location .section-title,
+    .contact .section-title {
+        font-size: 1.9rem;
+        letter-spacing: 1.5px;
+    }
+
     .section-subtitle {
         font-size: 1.05rem;
         margin-bottom: var(--spacing-md);
@@ -1058,6 +1071,13 @@ section {
         font-size: 1.8rem;
     }
 
+    .prize .section-title,
+    .location .section-title,
+    .contact .section-title {
+        font-size: 1.55rem;
+        letter-spacing: 1px;
+    }
+
     .rules .section-title {
         font-size: 1.05rem;
         letter-spacing: 0.15px;
@@ -1076,5 +1096,19 @@ section {
 
     .event-day {
         font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .section-title {
+        font-size: 1.65rem;
+        letter-spacing: 1px;
+    }
+
+    .prize .section-title,
+    .location .section-title,
+    .contact .section-title {
+        font-size: 1.35rem;
+        letter-spacing: 0.5px;
     }
 }
