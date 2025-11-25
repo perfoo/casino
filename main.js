@@ -128,6 +128,7 @@ function initMobileMenu() {
 
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    const statusElement = document.getElementById('formStatus');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -137,17 +138,36 @@ function initContactForm() {
             return;
         }
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        statusElement.textContent = '';
 
-        const successMessage = currentLanguage === 'hr'
-            ? 'Hvala vam! Vaša poruka je uspješno poslana. Odgovorit ćemo vam u najkraćem mogućem roku.'
-            : 'Thank you! Your message has been sent successfully. We will respond to you as soon as possible.';
+        const formData = new FormData(form);
 
-        alert(successMessage);
+        fetch(form.getAttribute('action'), {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                const successMessage = currentLanguage === 'hr'
+                    ? 'Hvala vam! Vaša poruka je uspješno poslana. Odgovorit ćemo vam u najkraćem mogućem roku.'
+                    : 'Thank you! Your message has been sent successfully. We will respond to you as soon as possible.';
 
-        form.reset();
+                const errorMessage = currentLanguage === 'hr'
+                    ? 'Došlo je do pogreške pri slanju poruke. Pokušajte ponovno.'
+                    : 'There was an error sending your message. Please try again.';
+
+                statusElement.textContent = data.success ? successMessage : errorMessage;
+
+                if (data.success) {
+                    form.reset();
+                }
+            })
+            .catch(() => {
+                const errorMessage = currentLanguage === 'hr'
+                    ? 'Došlo je do pogreške pri slanju poruke. Pokušajte ponovno.'
+                    : 'There was an error sending your message. Please try again.';
+                statusElement.textContent = errorMessage;
+            });
     });
 }
 
