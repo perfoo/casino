@@ -834,6 +834,13 @@ section {
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
 }
 
+.form-status {
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-primary);
+    text-align: center;
+    min-height: 1.4em;
+}
+
 .footer {
     background-color: var(--color-bg-darker);
     padding: var(--spacing-md) 0;
