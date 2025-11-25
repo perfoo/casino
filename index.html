@@ -256,7 +256,7 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h3 data-hr="Telefon" data-en="Phone">Telefon</h3>
-                                <p>+385 91 320 5605</p>
+                                <p><a href="tel:+385913205605">+385 91 320 5605</a></p>
                             </div>
                         </div>
 
@@ -264,7 +264,7 @@
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h3 data-hr="Email" data-en="Email">Email</h3>
-                                <p>info@casinocezar.hr</p>
+                                <p><a href="mailto:info@casinocezar.hr">info@casinocezar.hr</a></p>
                             </div>
                         </div>
 
@@ -280,7 +280,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form fade-in" id="contactForm">
+                    <form class="contact-form fade-in" id="contactForm" action="contact.php" method="POST">
                         <div class="form-group">
                             <label for="name" data-hr="Ime i prezime" data-en="Full Name">Ime i prezime</label>
                             <input type="text" id="name" name="name" required>
@@ -299,6 +299,8 @@
                         <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
 
                         <button type="submit" class="submit-btn" data-hr="Pošalji poruku" data-en="Send Message">Pošalji poruku</button>
+
+                        <p class="form-status" id="formStatus" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
