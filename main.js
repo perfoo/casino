@@ -156,7 +156,8 @@ function initContactForm() {
                     ? 'Došlo je do pogreške pri slanju poruke. Pokušajte ponovno.'
                     : 'There was an error sending your message. Please try again.';
 
-                statusElement.textContent = data.success ? successMessage : errorMessage;
+                statusElement.textContent = data.message || (data.success ? successMessage : errorMessage);
+                statusElement.dataset.status = data.success ? 'success' : 'error';
 
                 if (data.success) {
                     form.reset();
@@ -167,6 +168,7 @@ function initContactForm() {
                     ? 'Došlo je do pogreške pri slanju poruke. Pokušajte ponovno.'
                     : 'There was an error sending your message. Please try again.';
                 statusElement.textContent = errorMessage;
+                statusElement.dataset.status = 'error';
             });
     });
 }
