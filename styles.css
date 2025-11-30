@@ -531,6 +531,119 @@ section {
     margin-top: var(--spacing-md);
 }
 
+.prize-rules-toggle-container {
+    max-width: 900px;
+    margin: var(--spacing-lg) auto 0;
+}
+
+.prize-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.08));
+    border: 2px solid var(--color-gold);
+    border-radius: 14px;
+    padding: var(--spacing-md);
+    color: var(--color-gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+    transition: all var(--transition-normal);
+}
+
+.prize-toggle:hover,
+.prize-toggle:focus-visible {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 34px rgba(212, 175, 55, 0.22);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.12));
+}
+
+.prize-toggle .toggle-indicator {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    box-shadow: inset 0 0 12px rgba(212, 175, 55, 0.25);
+    color: var(--color-gold-light);
+}
+
+.prize-toggle .toggle-text {
+    flex: 1;
+    text-align: left;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+}
+
+.prize-toggle .chevron {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    transition: transform var(--transition-fast);
+}
+
+.prize-toggle.open .chevron {
+    transform: rotate(180deg);
+}
+
+.prize-rules-card {
+    margin-top: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+}
+
+.prize-rules-card[hidden] {
+    display: none;
+}
+
+.prize-rules-embed {
+    padding: var(--spacing-md);
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.prize-rules-embed object {
+    width: 100%;
+    min-height: 520px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: #fff;
+}
+
+.prize-rules-download {
+    margin: 0;
+    text-align: right;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+.prize-rules-download a {
+    color: var(--color-gold);
+    text-decoration: underline;
+    margin-left: var(--spacing-xs);
+    font-weight: 700;
+}
+
+.prize-rules-download a:hover,
+.prize-rules-download a:focus-visible {
+    color: var(--color-gold-light);
+    outline: none;
+}
+
 .events {
     background-color: var(--color-bg-darker);
 }
