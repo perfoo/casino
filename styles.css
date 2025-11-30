@@ -532,8 +532,9 @@ section {
 }
 
 .prize-rules-toggle-container {
-    max-width: 900px;
-    margin: var(--spacing-lg) auto 0;
+    max-width: 800px;
+    margin: var(--spacing-md) auto var(--spacing-lg);
+    width: 100%;
 }
 
 .prize-toggle {
