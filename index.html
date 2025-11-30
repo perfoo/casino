@@ -119,7 +119,24 @@
         <section class="prize" id="prize">
             <div class="container">
                 <h2 class="section-title fade-in" data-hr="Nagradna igra" data-en="Prize Game">Nagradna igra</h2>
-                <p class="section-subtitle fade-in" data-hr="Pravila nagradne igre" data-en="Prize Game Rules">Pravila nagradne igre</p>
+
+                <div class="prize-rules-toggle-container fade-in">
+                    <button class="prize-toggle" id="prizeRulesToggle" aria-expanded="false" aria-controls="prizeRulesCard">
+                        <span class="toggle-indicator" aria-hidden="true"><i class="fas fa-scroll"></i></span>
+                        <span class="toggle-text" data-hr="Pravila nagradne igre" data-en="Prize Game Rules">Pravila nagradne igre</span>
+                        <span class="chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+
+                    <div class="prize-rules-card" id="prizeRulesCard" hidden>
+                        <div class="prize-rules-embed">
+                            <object data="Pravila%20nagradne%20igre%202025-2026.pdf#view=FitH" type="application/pdf" aria-label="Pravila nagradne igre 2025-2026 PDF"></object>
+                            <p class="prize-rules-download">
+                                <span data-hr="Download:" data-en="Download:">Download:</span>
+                                <a href="Pravila%20nagradne%20igre%202025-2026.pdf" download data-hr="Pravila nagradne igre PDF" data-en="Prize Game Rules PDF">Pravila nagradne igre PDF</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="prize-box fade-in">
                     <div class="prize-content">

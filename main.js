@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     updateCurrentYear();
     initHeaderScroll();
+    initPrizeRulesToggle();
 });
 
 function initLanguageSwitcher() {
@@ -193,5 +194,25 @@ function initHeaderScroll() {
         }
 
         lastScroll = currentScroll;
+    });
+}
+
+function initPrizeRulesToggle() {
+    const toggleButton = document.getElementById('prizeRulesToggle');
+    const rulesCard = document.getElementById('prizeRulesCard');
+
+    if (!toggleButton || !rulesCard) return;
+
+    toggleButton.addEventListener('click', () => {
+        const isHidden = rulesCard.hasAttribute('hidden');
+
+        if (isHidden) {
+            rulesCard.removeAttribute('hidden');
+        } else {
+            rulesCard.setAttribute('hidden', '');
+        }
+
+        toggleButton.setAttribute('aria-expanded', String(isHidden));
+        toggleButton.classList.toggle('open', isHidden);
     });
 }
