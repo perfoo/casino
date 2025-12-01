@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     updateCurrentYear();
     initHeaderScroll();
-    initPrizeRulesToggle();
 });
 
 function initLanguageSwitcher() {
@@ -197,29 +196,3 @@ function initHeaderScroll() {
     });
 }
 
-function initPrizeRulesToggle() {
-    const toggleButton = document.getElementById('prizeRulesToggle');
-    const rulesCard = document.getElementById('prizeRulesCard');
-    const pdfObject = rulesCard?.querySelector('object');
-    const pdfUrl = pdfObject?.getAttribute('data')?.split('#')[0];
-    const mobileViewport = window.matchMedia('(max-width: 768px)');
-
-    if (!toggleButton || !rulesCard) return;
-
-    toggleButton.addEventListener('click', () => {
-        const isHidden = rulesCard.hasAttribute('hidden');
-
-        if (isHidden) {
-            rulesCard.removeAttribute('hidden');
-        } else {
-            rulesCard.setAttribute('hidden', '');
-        }
-
-        toggleButton.setAttribute('aria-expanded', String(isHidden));
-        toggleButton.classList.toggle('open', isHidden);
-
-        if (isHidden && mobileViewport.matches && pdfUrl) {
-            window.open(pdfUrl, '_blank');
-        }
-    });
-}

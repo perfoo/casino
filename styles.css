@@ -531,39 +531,43 @@ section {
     margin-top: var(--spacing-md);
 }
 
-.prize-rules-toggle-container {
-    max-width: 800px;
+.prize-rules-actions {
+    max-width: 900px;
     margin: var(--spacing-md) auto var(--spacing-lg);
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
 }
 
-.prize-toggle {
-    width: 100%;
+.prize-action {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    justify-content: space-between;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(212, 175, 55, 0.08));
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.08));
     border: 2px solid var(--color-gold);
     border-radius: 14px;
-    padding: var(--spacing-md);
     color: var(--color-gold);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    cursor: pointer;
+    text-decoration: none;
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
     transition: all var(--transition-normal);
 }
 
-.prize-toggle:hover,
-.prize-toggle:focus-visible {
-    outline: none;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 34px rgba(212, 175, 55, 0.22);
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.12));
+.prize-action.secondary {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.3));
+    border-color: rgba(212, 175, 55, 0.7);
 }
 
-.prize-toggle .toggle-indicator {
+.prize-action:hover,
+.prize-action:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 34px rgba(212, 175, 55, 0.22);
+    outline: none;
+}
+
+.prize-action .action-icon,
+.prize-action .action-chevron {
     width: 44px;
     height: 44px;
     display: grid;
@@ -575,74 +579,66 @@ section {
     color: var(--color-gold-light);
 }
 
-.prize-toggle .toggle-text {
-    flex: 1;
-    text-align: left;
-    font-size: 1.05rem;
-    text-transform: uppercase;
-}
-
-.prize-toggle .chevron {
+.prize-action .action-chevron {
+    border-radius: 50%;
     width: 36px;
     height: 36px;
-    display: grid;
-    place-items: center;
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 50%;
-    border: 1px solid rgba(212, 175, 55, 0.6);
-    transition: transform var(--transition-fast);
 }
 
-.prize-toggle.open .chevron {
-    transform: rotate(180deg);
+.prize-action .action-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.prize-rules-card {
-    margin-top: var(--spacing-md);
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(3px);
+.prize-action .action-title {
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--color-gold);
 }
 
-.prize-rules-card[hidden] {
-    display: none;
-}
-
-.prize-rules-embed {
-    padding: var(--spacing-md);
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-.prize-rules-embed object {
-    width: 100%;
-    min-height: 520px;
-    border-radius: 12px;
-    border: 1px solid rgba(212, 175, 55, 0.35);
-    background: #fff;
-}
-
-.prize-rules-download {
-    margin: 0;
-    text-align: right;
+.prize-action .action-subtitle {
     color: var(--color-text-secondary);
     font-weight: 600;
+    font-size: 0.95rem;
 }
 
-.prize-rules-download a {
-    color: var(--color-gold);
-    text-decoration: underline;
-    margin-left: var(--spacing-xs);
-    font-weight: 700;
-}
+@media (max-width: 520px) {
+    .prize-rules-actions {
+        gap: var(--spacing-sm);
+    }
 
-.prize-rules-download a:hover,
-.prize-rules-download a:focus-visible {
-    color: var(--color-gold-light);
-    outline: none;
+    .prize-action {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+        border-radius: 10px;
+    }
+
+    .prize-action .action-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+    }
+
+    .prize-action .action-chevron {
+        display: none;
+    }
+
+    .prize-action .action-text {
+        gap: 2px;
+    }
+
+    .prize-action .action-title {
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+    }
+
+    .prize-action .action-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.25;
+    }
 }
 
 .events {
