@@ -605,6 +605,42 @@ section {
     font-size: 0.95rem;
 }
 
+@media (max-width: 520px) {
+    .prize-rules-actions {
+        gap: var(--spacing-sm);
+    }
+
+    .prize-action {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+        border-radius: 10px;
+    }
+
+    .prize-action .action-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+    }
+
+    .prize-action .action-chevron {
+        display: none;
+    }
+
+    .prize-action .action-text {
+        gap: 2px;
+    }
+
+    .prize-action .action-title {
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+    }
+
+    .prize-action .action-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.25;
+    }
+}
+
 .events {
     background-color: var(--color-bg-darker);
 }
